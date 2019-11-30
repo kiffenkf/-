@@ -6,8 +6,11 @@ class Dispacher:
         self.cmds[cmd] = fn
 
     def run(self):
-        pass
-
+        while True:
+            cmd = input('>>')
+            if cmd.strip() == 'quit':
+                break
+            self.cmds.get(cmd, lambda : print('unknown cmd'))()
 
 
 
